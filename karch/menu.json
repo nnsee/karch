@@ -1,0 +1,38 @@
+{
+    "comment001": "neonsea's karch",
+    "items": [
+    {
+        "name": "karch",
+        "items": [
+        {
+            "name": "Launch karch",
+            "action": "./karch.sh",
+            "exitmenu": true,
+            "refresh": false,
+            "status": false,
+            "internal": "status Launch the Kindle Arch chroot"
+        },
+        {
+            "name": "Launch karch in kterm",
+            "action": "../kterm/bin/kterm.sh",
+            "params": "-e \"./karch.sh launch\"",
+            "if": "\"kterm\" -ext",
+            "exitmenu": false,
+            "refresh": false,
+            "status": false,
+            "internal": "status Launch kterm and run the chroot without DE"
+        },
+        {
+            "name": "Unmount all devices",
+            "action": "./karch.sh",
+            "params": "umountall",
+            "if": "\"/etc/mtab\" \"^/dev/loop/karch.*$\" -g",
+            "exitmenu": false,
+            "refresh": true,
+            "status": false,
+            "internal": "status Forcibly unmount all devices"
+        }
+        ]
+    }
+    ]
+}
