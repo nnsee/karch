@@ -14,6 +14,8 @@ INITSCRIPT="#!/bin/sh
 rm /etc/resolv.conf;
 echo 'nameserver 8.8.8.8' > /etc/resolv.conf;
 test -e /etc/ready || {
+    pacman-key --init;
+    pacman -Syu --noconfirm;
     pacman -S lxde xorg-server-xephyr --noconfirm;
     if [ $? -eq 0 ]; then
         touch /etc/ready;
