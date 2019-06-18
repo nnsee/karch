@@ -3,11 +3,11 @@ set -x
 SCREENSIZE=$(eips -i | grep 'xres:' | awk '{print $2"x"$4}')
 SERVICES="framework pillow webreader kb contentpackd"
 
-WORKDIR=$(pwd)
+WORK_DIR=$(pwd)
 CHROOT_DIRECTORY="system"
 FS_FILE="arch.img"
 
-CHRPATH="${WORKDIR}/${CHROOT_DIRECTORY}"
+CHRPATH="${WORK_DIR}/${CHROOT_DIRECTORY}"
 
 INITSCRIPT="#!/bin/sh
 
