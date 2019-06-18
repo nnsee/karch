@@ -15,9 +15,10 @@ rm /etc/resolv.conf;
 echo 'nameserver 8.8.8.8' > /etc/resolv.conf;
 test -e /etc/ready || {
     pacman-key --init;
+    pacman-key --populate archlinuxarm;
     pacman -Syu --noconfirm;
     pacman -S lxde xorg-server-xephyr --noconfirm;
-    if [ $? -eq 0 ]; then
+    if [ \$? -eq 0 ]; then
         touch /etc/ready;
     else
         touch /etc/failed;
@@ -26,7 +27,7 @@ fi
 }
 
 export DISPLAY=:0
-Xephyr :1 -title \"L:A_N:application_ID:xephyr\" -screen $SCREENSIZE -cc 4 -nocursor &
+Xephyr :1 -title \"L:A_N:application_ID:xephyr\" -screen ${SCREENSIZE} -cc 4 -nocursor &
 sleep 1
 export DISPLAY=:1
 lxsession &
