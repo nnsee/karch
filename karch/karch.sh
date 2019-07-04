@@ -115,8 +115,8 @@ main(){
     gui start;
 }
 
-if [ -z "$1" ]; then
+if [ -z "$@" ]; then
     main
 else
-    eval "$1"
+    eval "$@"
 fi;
