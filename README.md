@@ -2,6 +2,8 @@
 
 A KUAL extension to easily and automatically manage an Arch Linux chroot installation on an Amazon Kindle.
 
+__NOTE__: This project is no longer maintained. You should probably check out the [Alpine Kindle](https://github.com/schuhumi/alpine_kindle) project instead.
+
 ### Requirements
 * A newer model rooted Kindle
 * [KUAL](https://www.mobileread.com/forums/showthread.php?t=203326)
